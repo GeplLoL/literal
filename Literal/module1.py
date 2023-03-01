@@ -1,4 +1,5 @@
-﻿from random import *
+from operator import index
+from random import *
 def Loe_fail(f):
     riigid=[]
     sonastik = {}
@@ -37,8 +38,20 @@ def parandamine(f:dict):
     cx=input("Sisse pealinn: ")
     f.update({xc:cx})
     return f
-def test(f:dict):
-    xc=int(input("Mitu korda sa tahad mängida? "))
-    for i in range(xc):
-        x=choice(Loe_fail(riigid))
-    return x
+
+def test(f):
+    xc = int(input("Mitu korda sa tahad mängida? "))
+    sd = list(f.keys())
+    ds = list(f.values()) 
+    s = choice(sd)
+    print(s)
+    ind = sd.index(s) 
+    answer = input("Sisse pealinn: ") 
+    if answer == ds[ind]: 
+        x = "õige"
+        return x 
+    else:
+        x = "vale"
+        return x
+    
+    
