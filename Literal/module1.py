@@ -1,4 +1,3 @@
-from operator import index
 from random import *
 def Loe_fail(f):
     riigid=[]
@@ -44,14 +43,28 @@ def test(f):
     sd = list(f.keys())
     ds = list(f.values()) 
     s = choice(sd)
-    print(s)
-    ind = sd.index(s) 
-    answer = input("Sisse pealinn: ") 
-    if answer == ds[ind]: 
-        x = "õige"
-        return x 
-    else:
-        x = "vale"
-        return x
-    
-    
+    vale=0
+    oige=0
+    for i in range(xc):
+        
+        print(s)
+        ind = sd.index(s) 
+        answer = input("Sisse pealinn: ")
+        if answer == sd[ind]: 
+            x = "õige"
+            oige+=1
+            return x 
+        else:
+            x = "vale"
+            vale+=1
+            return x
+    print("õige=",oige," vale=",vale)
+def salv(fail:str):
+    f = open(fail, "r", encoding="utf-8-sig")
+    jarjend=[]
+    for rida in f:
+        jarjend.append(rida.strip())
+    f.close()
+    f=open(fail,"w",encoding="utf-8-sig")
+    for line in jarjend:
+        f.writeLines(line + "\n")
