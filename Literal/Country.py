@@ -1,6 +1,7 @@
-﻿from module1 import *
+from module1 import *
+asd=Loe_fail("TextFile1.txt")
 while True:
-    v=int(input("1-Otsige pealinna\n2-Leidke riik\n3-Lisa\n4-Parandamine\n5-Test"))
+    v=int(input("1-Otsige pealinna\n2-Leidke riik\n3-Lisa\n4-Parandamine\n5-Test\n6-salvest"))
     if v==1:
         laused=Loe_fail("TextFile1.txt")
         x=keyRiik(laused)
@@ -23,3 +24,5 @@ while True:
         laused=Loe_fail("TextFile1.txt")
         x=test(laused)
         print(x)
+    elif v==6:
+        salv("TextFile1.txt")
